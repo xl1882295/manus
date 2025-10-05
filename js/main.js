@@ -1,6 +1,11 @@
 new Vue({
     el: '#app',
     data: {
-        message: '你好，Vue.js!'
+        currentPage: 'page1'
+    },
+    computed: {
+        currentPageComponent: function() {
+            return this.currentPage;
+        }
     }
 });

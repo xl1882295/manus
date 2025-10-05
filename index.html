@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue.js 簡單頁面</title>
+    <title>Vue.js 網站</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/ex/vue.global.min.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>{{ message }}</h1>
+        <nav>
+            <a href="#" @click="currentPage = 'page1'">頁面 1</a>
+            <a href="#" @click="currentPage = 'page2'">頁面 2</a>
+            <a href="#" @click="currentPage = 'page3'">頁面 3</a>
+        </nav>
+        <div class="content">
+            <component :is="currentPageComponent"></component>
+        </div>
     </div>
 
     <script src="js/main.js"></script>
